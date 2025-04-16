@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { CharacterType } from "./types/characterType";
 import { getCharacters } from "./api/get-characters";
 import Character from "./components/Character/Character";
-
+import characters from "./testing/mock/characters";
 export default function App(): JSX.Element {
   const [characters, setCharacters] = React.useState([] as CharacterType[]);
   const [pageNumber, setPageNumber] = React.useState(1 as number);
@@ -19,7 +19,8 @@ export default function App(): JSX.Element {
 
     fetchCharacters();
   }, [pageNumber]);
-
+  console.log(characters[0]);
+  
   return (
     <div>
       <h1>Characters</h1>
